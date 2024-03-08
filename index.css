@@ -763,10 +763,12 @@ align-items: center;
 
     .upper{
         min-height: 550px;
+
     }
 
     .right-container{
-        width: 93.5vw;
+        width: 98%;
+        margin: auto;
     }
 
     .close-btn{
@@ -834,6 +836,8 @@ align-items: center;
         height: auto;
         padding-bottom: 10px;
         width: 100vw;
+        align-items: center;
+        gap: 20px;
     }
 
     .songtitle{
@@ -842,7 +846,7 @@ align-items: center;
 
     .footer{
         height: 200px;
-        width: 98%;
+        width: 96%;
     }
 
     .footer-div{
