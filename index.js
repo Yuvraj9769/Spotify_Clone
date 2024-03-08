@@ -150,11 +150,9 @@ seekbar.addEventListener("click",(e)=>{
 
 }
 
-
 //Event on prev btn
 prebtn.addEventListener("click",(e)=>{
   const PreSongIndex = newsongs.indexOf(encodeURI("/songs/" + songtitle.innerHTML));
-  console.log(PreSongIndex);
   if(PreSongIndex - 1 >= 0)
   {
     circle.style.left = "0%";
@@ -175,8 +173,8 @@ nextbtn.addEventListener("click",(e)=>{
 //Event listener on carddata
 Array.from(boxes).forEach((e,ind)=>{
   e.addEventListener("click",(elem)=>{
-    console.log(elem.currentTarget,ind);
-    console.log(newsongs[ind].replaceAll("%20"," ").split("/songs/")[1]);
+
+
     Playsong(newsongs[ind].replaceAll("%20"," ").split("/songs/")[1]);
   })
 })
