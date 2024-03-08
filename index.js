@@ -63,7 +63,7 @@ let carddata  = [{src: "https://c.saavncdn.com/700/Main-Tera-Hero-2014-500x500.j
  })
 
 let getsongs = async() =>{
-    let songsdata = await fetch("http://127.0.0.1:5500/songs/");
+    let songsdata = await fetch("/songs/");
     let song = await songsdata.text();
     let div = document.createElement("div");
     div.innerHTML = song;
@@ -153,22 +153,22 @@ seekbar.addEventListener("click",(e)=>{
 
 //Event on prev btn
 prebtn.addEventListener("click",(e)=>{
-  const PreSongIndex = newsongs.indexOf(encodeURI("http://127.0.0.1:5500/songs/" + songtitle.innerHTML));
+  const PreSongIndex = newsongs.indexOf(encodeURI("/songs/" + songtitle.innerHTML));
   console.log(PreSongIndex);
   if(PreSongIndex - 1 >= 0)
   {
     circle.style.left = "0%";
-    Playsong(newsongs[PreSongIndex - 1].replace("http://127.0.0.1:5500/songs/",""));
+    Playsong(newsongs[PreSongIndex - 1].replace("/songs/",""));
   }
 })
 
 //Event on next btn
 nextbtn.addEventListener("click",(e)=>{
-  const NextSongIndex = newsongs.indexOf(encodeURI("http://127.0.0.1:5500/songs/" + songtitle.innerHTML));
+  const NextSongIndex = newsongs.indexOf(encodeURI("/songs/" + songtitle.innerHTML));
   if(NextSongIndex + 1 < newsongs.length)
   {
     circle.style.left = "0%";
-    Playsong(newsongs[NextSongIndex  + 1].replace("http://127.0.0.1:5500/songs/",""));
+    Playsong(newsongs[NextSongIndex  + 1].replace("/songs/",""));
   }
 })
 
