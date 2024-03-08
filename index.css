@@ -869,8 +869,12 @@ align-items: center;
     padding-bottom: 10px;
     }
 
+    .copyright{
+        margin-top: 15px;
+    }
+
     .copyright p{
-        font-size: 18px;
+        font-size: 16px;
     }
 
     .yuvicopyright{
@@ -881,6 +885,7 @@ align-items: center;
     .playlist-footer{
         height: auto;
         flex-wrap: wrap;
+        padding-bottom: 15px;
     }
 
     .soundbar-container{
@@ -891,8 +896,9 @@ align-items: center;
         border-radius: 10px;
     }
 
-    .copyright p {
-        font-size: 17px;
+    .second-div{
+        justify-content: start;
+        gap: 25px;
     }
 
 }
