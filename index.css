@@ -883,4 +883,8 @@ align-items: center;
         border-radius: 10px;
     }
 
+    .copyright p {
+        font-size: 17px;
+    }
+
 }
