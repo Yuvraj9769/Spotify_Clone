@@ -761,6 +761,10 @@ align-items: center;
         flex-wrap: nowrap;
     }
 
+    .upper{
+        min-height: 711px;
+    }
+
     .right-container{
         width: 93.5vw;
     }
@@ -829,7 +833,7 @@ align-items: center;
     .main{
         height: auto;
         padding-bottom: 10px;
-        width: 99vw;
+        width: 100vw;
     }
 
     .songtitle{
@@ -881,6 +885,10 @@ align-items: center;
 
     .slider-bar{
         border-radius: 10px;
+    }
+
+    .copyright p {
+        font-size: 17px;
     }
 
 }
