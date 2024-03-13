@@ -94,6 +94,7 @@ function secondsToTime(seconds) {
 
 let Playsong = (s,defsong = false) =>{
   songtitle.innerHTML = `${decodeURI(s)}`;
+
   audio.src = "/songs/" + s;
   playbtn.removeAttribute("class");
   playbtn.className = "fa-solid fa-circle-play";
@@ -137,7 +138,7 @@ songtitle.innerHTML = `${newsongs[0].replaceAll("%20"," ").split("/songs/")[1]}`
   //Setting timeupdate evnt listener
   audio.addEventListener("timeupdate",(e)=>{
     songtime.innerHTML = `${secondsToTime(audio.currentTime)} / ${secondsToTime(audio.duration)}`;
-      circle.style.left = (audio.currentTime / audio.duration) * 100 + "%";
+      circle.style.left = (audio.currentTime / audio.duration) * 99 + "%";
     })
 
     //seekbar event for changing songtime
@@ -152,29 +153,34 @@ seekbar.addEventListener("click",(e)=>{
 
 //Event on prev btn
 prebtn.addEventListener("click",(e)=>{
-  const PreSongIndex = newsongs.indexOf(encodeURI("/songs/" + songtitle.innerHTML));
+  // const PreSongIndex = newsongs.indexOf(encodeURI("http://127.0.0.1:5500/songs/" + songtitle.innerHTML));
+
+  //for server
+  const PreSongIndex = newsongs.indexOf(encodeURI("https://letsspotify.freewebhostmost.com/songs/" + songtitle.innerHTML));
+ 
   if(PreSongIndex - 1 >= 0)
   {
     circle.style.left = "0%";
-    Playsong(newsongs[PreSongIndex - 1].replace("/songs/",""));
+    Playsong(newsongs[PreSongIndex - 1].replace("https://letsspotify.freewebhostmost.com/songs/",""));
   }
 })
 
 //Event on next btn
 nextbtn.addEventListener("click",(e)=>{
-  const NextSongIndex = newsongs.indexOf(encodeURI("/songs/" + songtitle.innerHTML));
+  // const NextSongIndex = newsongs.indexOf(encodeURI("/songs/" + songtitle.innerHTML));
+
+   //for server
+  const NextSongIndex = newsongs.indexOf(encodeURI("https://letsspotify.freewebhostmost.com/songs/" + songtitle.innerHTML));
   if(NextSongIndex + 1 < newsongs.length)
   {
     circle.style.left = "0%";
-    Playsong(newsongs[NextSongIndex  + 1].replace("/songs/",""));
+    Playsong(newsongs[NextSongIndex  + 1].replace("https://letsspotify.freewebhostmost.com/songs/",""));
   }
 })
 
 //Event listener on carddata
 Array.from(boxes).forEach((e,ind)=>{
   e.addEventListener("click",(elem)=>{
-
-
     Playsong(newsongs[ind].replaceAll("%20"," ").split("/songs/")[1]);
   })
 })
