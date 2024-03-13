@@ -665,7 +665,7 @@ body::-webkit-scrollbar{
 }
 .slider-bar{
     width: 100%;
-    background-color: #F6F6F6;
+    background-color: gray;
     height: 22%;
     border-radius: 10px;
 }
@@ -893,6 +893,7 @@ align-items: center;
 
     .slider-bar{
         border-radius: 10px;
+
     }
 
     .second-div{
